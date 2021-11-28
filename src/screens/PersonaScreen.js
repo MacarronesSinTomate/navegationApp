@@ -1,10 +1,19 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Button, Text, View } from 'react-native'
+import { AuthContext } from '../context/AuthContext';
 import { styles } from '../theme/appTheme'
 
 export const PersonaScreen = ( { navigation, route } ) => {
     
     const params = route.params;
+
+    const { authState, changeUsername } = useContext( AuthContext )
+
+    useEffect(() => {
+
+        if ( authState.isLoggedIn ) changeUsername( params.nombre );
+
+    }, [])
 
     useEffect(() => {
         

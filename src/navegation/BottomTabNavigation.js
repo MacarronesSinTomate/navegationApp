@@ -18,9 +18,12 @@ export const BottomTabNavigation = () => {
     return (
         <Tab.Navigator
 
+            style={{backgroundColor: 'white'}}
+
             barStyle={{
                 backgroundColor: colores.primary,
                 margin: 10,
+                marginHorizontal: 50,
                 overflow: 'hidden',
                 borderRadius: 30,
             }}
@@ -56,7 +59,10 @@ export const BottomTabNavigation = () => {
                     return(
                         <Icon name={ iconName } size={20} color={ color } />
                     )
-                }
+                },
+
+
+
             })}
         >
             {/* <Tab.Screen name="Tab1Screen" options={{ title: 'Tab 1', tabBarIcon: ( props ) => seticon( props )  }} component={ Tab1Screen } /> */}

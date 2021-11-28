@@ -1,11 +1,14 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Text, TouchableOpacity, useWindowDimensions, View } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons';
+import { AuthContext } from '../context/AuthContext';
 import { styles } from '../theme/appTheme'
 
 export const SettingsScreen = ( { navigation } ) => {
 
     const { width, height } = useWindowDimensions();
+
+    const { authState } = useContext( AuthContext )
 
     useEffect(() => {
         
@@ -33,13 +36,14 @@ export const SettingsScreen = ( { navigation } ) => {
 
 
     return (
-        <View style={ styles.globalMargin }>
+        <View style={ { ...styles.globalMargin, alignItems: 'center' } }>
             
-            <Text 
-                style={ styles.title }
-            > 
-                Settings Screen 
-            </Text>
+            <Text style={ styles.title }> Settings Screen </Text>
+            <Text style={ { fontSize: 20 } }> { JSON.stringify( authState, "", 4 ) } </Text>
+
+            {
+                authState.favoriteIcon && <Icon name={ authState.favoriteIcon } size={50} color="black"/>
+            }
 
             <TouchableOpacity
                 style={{ padding: 10, borderRadius: 10, backgroundColor: 'red', marginTop: 20 }}

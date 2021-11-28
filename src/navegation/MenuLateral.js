@@ -62,15 +62,6 @@ const MenuInterno = ( { navigation } ) => {
                     <Text style={ styles.menuText }> Navegation </Text>
                 </TouchableOpacity> */}
 
-                {/* SETTINGS */}
-                <TouchableOpacity 
-                    style={ styles.menuBoton }
-                    onPress={ () => navigation.navigate( "StackSettings" ) }
-                >
-                    <Icon style={{ marginRight: 10 }} name="cog-outline" size={25} color="black"/>
-                    <Text style={ styles.menuText }> Settings </Text>
-                </TouchableOpacity>
-
                 {/* TabNavigation */}
                 <TouchableOpacity 
                     style={ styles.menuBoton }
@@ -78,6 +69,15 @@ const MenuInterno = ( { navigation } ) => {
                 >
                     <Icon style={{ marginRight: 10 }} name="albums-outline" size={25} color="black"/>
                     <Text style={ styles.menuText }> TabNavigation </Text>
+                </TouchableOpacity>
+
+                {/* SETTINGS */}
+                <TouchableOpacity 
+                    style={ styles.menuBoton }
+                    onPress={ () => navigation.navigate( "StackSettings" ) }
+                >
+                    <Icon style={{ marginRight: 10 }} name="cog-outline" size={25} color="black"/>
+                    <Text style={ styles.menuText }> Settings </Text>
                 </TouchableOpacity>
 
             </View>

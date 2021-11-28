@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { Text, View } from 'react-native'
 import { styles } from '../theme/appTheme';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { TouchableIcon } from '../components/TouchableIcon';
 
 export const Tab1Screen = () => {
 
@@ -10,7 +11,7 @@ export const Tab1Screen = () => {
     }, [])
 
     return (
-        <View style={ { ...styles.globalMargin } }>
+        <View style={ { padding: 30, flex: 1, backgroundColor: 'white' } }>
             
             <Text style={{ fontSize: 30, marginVertical: 20, borderBottomWidth: 2 }}> Iconos </Text>
 
@@ -21,10 +22,10 @@ export const Tab1Screen = () => {
                     justifyContent: 'space-between'
                 }}
             >
-                <Icon style={ styles.iconsScreen } name="airplane-outline" size={40} color="#900" />
-                <Icon style={ styles.iconsScreen } name="add-outline" size={40} color="#900" />
-                <Icon style={ styles.iconsScreen } name="alarm-outline" size={40} color="#900" />
-                <Icon style={ styles.iconsScreen } name="backspace-outline" size={40} color="#900" />
+                <TouchableIcon iconName="airplane-outline" />
+                <TouchableIcon iconName="add-outline" />
+                <TouchableIcon iconName="alarm-outline" />
+                <TouchableIcon iconName="backspace-outline" />
             </View>
 
             <View
@@ -34,10 +35,10 @@ export const Tab1Screen = () => {
                     justifyContent: 'space-between'
                 }}
             >
-                <Icon style={ styles.iconsScreen } name="bookmarks-outline" size={40} color="#900" />
-                <Icon style={ styles.iconsScreen } name="car-sport-outline" size={40} color="#900" />
-                <Icon style={ styles.iconsScreen } name="chatbox-ellipses-outline" size={40} color="#900" />
-                <Icon style={ styles.iconsScreen } name="cellular-outline" size={40} color="#900" />
+                <TouchableIcon iconName="bookmarks-outline"/>
+                <TouchableIcon iconName="car-sport-outline"/>
+                <TouchableIcon iconName="chatbox-ellipses-outline"/>
+                <TouchableIcon iconName="cellular-outline"/>
             </View>
 
             <View
@@ -47,10 +48,10 @@ export const Tab1Screen = () => {
                     justifyContent: 'space-between'
                 }}
             >
-                <Icon style={ styles.iconsScreen } name="cloud-upload-outline" size={40} color="#900" />
-                <Icon style={ styles.iconsScreen } name="download-outline" size={40} color="#900" />
-                <Icon style={ styles.iconsScreen } name="document-outline" size={40} color="#900" />
-                <Icon style={ styles.iconsScreen } name="game-controller-outline" size={40} color="#900" />
+                <TouchableIcon iconName="cloud-upload-outline"/>
+                <TouchableIcon iconName="download-outline"/>
+                <TouchableIcon iconName="document-outline"/>
+                <TouchableIcon iconName="game-controller-outline"/>
             </View>
 
         </View>
