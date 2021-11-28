@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 import { createStackNavigator } from "@react-navigation/stack";
 import { SettingsScreen } from "../screens/SettingsScreen";
-import { useWindowDimensions } from "react-native";
+import { Button, useWindowDimensions } from "react-native";
 
 const Stack = createStackNavigator();
 
@@ -27,7 +27,16 @@ export const StackSettings = ( { navigation } ) => {
 
     return (
 
-        <Stack.Navigator>
+        <Stack.Navigator
+            screenOptions={{
+                headerStyle: {
+                    elevation: 0
+                },
+                cardStyle: {
+                    backgroundColor: 'white'
+                }
+            }}
+        >
             <Stack.Screen 
                 name="SettingsScreen"
                 component={ SettingsScreen }

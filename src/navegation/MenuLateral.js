@@ -5,6 +5,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import { styles } from '../theme/appTheme';
 import { StackNavigation } from './StackNavigation';
 import { StackSettings } from './StackSettings';
+import { BottomTabNavigation } from './BottomTabNavigation';
 
 const Drawer = createDrawerNavigator();
 
@@ -19,9 +20,12 @@ export const MenuLateral = () => {
                 headerShown: false,
             }}
             drawerContent={ ( props ) => <MenuInterno { ...props } /> }
+            initialRouteName="TabNavigation"
         >
             <Drawer.Screen name="StackNavigation" component={ StackNavigation } />
             <Drawer.Screen name="StackSettings"  component={ StackSettings } />
+            <Drawer.Screen name="BottomTabNavigation"  component={ BottomTabNavigation } />
+
         </Drawer.Navigator>
   );
 }
@@ -49,20 +53,30 @@ const MenuInterno = ( { navigation } ) => {
             {/* OPCIONES DE MENU */}
             <View style={ styles.menuContainer }>
 
-                <TouchableOpacity 
+                {/* HOME */}
+                {/* <TouchableOpacity 
                     style={ styles.menuBoton }
                     onPress={ () => navigation.navigate( "StackNavigation" ) }
                 >
                     <Text style={ styles.menuText }> Navegation </Text>
-                </TouchableOpacity>
+                </TouchableOpacity> */}
 
+                {/* SETTINGS */}
                 <TouchableOpacity 
                     style={ styles.menuBoton }
                     onPress={ () => navigation.navigate( "StackSettings" ) }
                 >
                     <Text style={ styles.menuText }> Settings </Text>
                 </TouchableOpacity>
-                     
+
+                {/* TabNavigation */}
+                <TouchableOpacity 
+                    style={ styles.menuBoton }
+                    onPress={ () => navigation.navigate( "BottomTabNavigation" ) }
+                >
+                    <Text style={ styles.menuText }> TabNavigation </Text>
+                </TouchableOpacity>
+
             </View>
 
         </DrawerContentScrollView>
