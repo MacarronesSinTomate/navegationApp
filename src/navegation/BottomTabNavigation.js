@@ -1,21 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-
+import Icon from 'react-native-vector-icons/Ionicons';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { Tab1Screen } from '../screens/Tab1Screen';
-import { Tab2Screen } from '../screens/Tab2Screen';
-import { Tab3Screen } from '../screens/Tab3Screen';
+import { TopTabNavigation } from './TopTabNavigation';
 import { StackNavigation } from './StackNavigation';
 import { BorderlessButton } from 'react-native-gesture-handler';
 import { colores } from '../theme/appTheme';
 import { Text } from 'react-native';
-import { TopTabNavigation } from './TopTabNavigation';
 
 const Tab = createMaterialBottomTabNavigator();
 
 export const BottomTabNavigation = () => {
 
-
+    const [ backColor, setBackColor ] = useState( colores.primary );
 
     return (
         <Tab.Navigator
@@ -24,15 +22,15 @@ export const BottomTabNavigation = () => {
                 backgroundColor: colores.primary,
                 margin: 10,
                 overflow: 'hidden',
-                borderRadius: 30
+                borderRadius: 30,
             }}
+
+            shifting={ true }
 
             screenOptions={ ( { route } ) => ({
 
-                tabBarActiveTintColor: colores.primary,
-
                 tabBarLabelStyle:{
-                    fontSize: 15
+                    fontSize: 15,
                 },
 
                 tabBarIcon: ( { color, focused } ) => {
@@ -41,28 +39,22 @@ export const BottomTabNavigation = () => {
                     switch ( route.name ) {
 
                         case 'Tab1Screen':
-                            iconName = "T1"
+                            iconName = "add-outline"
                             break;
-                        case 'Tab2Screen':
-                            iconName = "T2"
+                        case 'TopTabNavigation':
+                            iconName = "tablet-landscape-outline"
                             break;
                         case 'StackNavigation':
-                            iconName = "St"
+                            iconName = "file-tray-stacked-outline"
                             break;
                         default:
-                            iconName = "BR";
+                            iconName = "";
                             break;
 
                     }
 
                     return(
-                        <Text
-                            style={{
-                                color: color
-                            }}
-                        >
-                            { iconName }
-                        </Text>
+                        <Icon name={ iconName } size={20} color={ color } />
                     )
                 }
             })}

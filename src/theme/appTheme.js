@@ -10,6 +10,7 @@ export const styles = StyleSheet.create({
     
     globalMargin: {
 
+        marginTop: 20,
         marginHorizontal: 20
 
     },
@@ -17,6 +18,13 @@ export const styles = StyleSheet.create({
     title : {
         fontSize: 30,
         marginBottom: 10
+    },
+
+    secundary_title : {
+        fontSize: 30,
+        marginTop: 20,
+        marginBottom: 10,
+        borderBottomWidth: 1
     },
 
     botonGrande : {
@@ -27,7 +35,7 @@ export const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         marginRight: 10,
-        marginTop: 20
+        marginTop: 20,
     },
 
     botonGrandeTexto : {
@@ -56,12 +64,20 @@ export const styles = StyleSheet.create({
     },
 
     menuBoton : {
-        margin: 10
+        margin: 10,
+        flexDirection: 'row',
+        alignItems: 'center'
     },
 
     menuText : {
         fontSize: 20,
         textAlign: 'left'
+    },
+
+    iconsScreen : {
+
+        margin: 5
+
     }
 
 });

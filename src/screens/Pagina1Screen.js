@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { Button, Text, useWindowDimensions, View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
+import Icon from 'react-native-vector-icons/Ionicons'
 import { styles } from '../theme/appTheme'
 
 export const Pagina1Screen = ( { navigation } ) => {
@@ -16,16 +17,14 @@ export const Pagina1Screen = ( { navigation } ) => {
                         style={{
                             marginLeft: 10, 
                             marginRight: 10, 
-                            width: 60,
+                            width: 40,
                             height: 35,
-                            backgroundColor: 'red',
-                            borderRadius: 10,
                             justifyContent: 'center',
                             alignItems: 'center'
                         }}
                         onPress={ () => { navigation.toggleDrawer() } }
                     >
-                        <Text style={ { fontSize: 15, color: 'white', fontWeight: 'bold' } }> Menu </Text>
+                        <Icon name="menu-outline" size={30} color="black"/>
                     </TouchableOpacity>
                 ),
 
@@ -54,20 +53,21 @@ export const Pagina1Screen = ( { navigation } ) => {
                 onPress={ () => navigation.navigate( "Pagina2Screen" ) }
             />
 
-            <Text> Navegar con argumentos </Text>
+            <Text style={ styles.secundary_title }> Navegar con argumentos </Text>
 
             <View style={ { flexDirection: 'row' } }>
 
                 <TouchableOpacity
                     style={ { 
                         ...styles.botonGrande, 
-                        backgroundColor: '#5856D6' 
+                        backgroundColor: '#5856D6',
                     } }
                     onPress={ () => navigation.navigate( 'PersonaScreen', { 
                         id: 1,
                         nombre: 'Pedro'
                         } ) }
                 >
+                    <Icon style={ { margin: 10 } } name="person-outline" size={30} color="black"/>
                     <Text style={ styles.botonGrandeTexto }>Pedro</Text>
                 </TouchableOpacity>
 
@@ -78,6 +78,7 @@ export const Pagina1Screen = ( { navigation } ) => {
                         nombre: 'María'
                     } ) }
                 >
+                    <Icon style={ { margin: 10 } } name="person-outline" size={30} color="black"/>
                     <Text style={ styles.botonGrandeTexto }>Maria</Text>
                 </TouchableOpacity>
 

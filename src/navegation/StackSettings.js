@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 
 import { createStackNavigator } from "@react-navigation/stack";
 import { SettingsScreen } from "../screens/SettingsScreen";
-import { Button, useWindowDimensions } from "react-native";
+import { Button, TouchableOpacity, useWindowDimensions } from "react-native";
+import Icon from "react-native-vector-icons/Ionicons";
 
 const Stack = createStackNavigator();
 
@@ -12,16 +13,7 @@ export const StackSettings = ( { navigation } ) => {
 
     useEffect(() => {
         
-        if ( width < 768 ) {
-            navigation.setOptions({
-                headerLeft: () => (
-                    <Button 
-                        title="Menú"
-                        onPress={ () => { navigation.toggleDrawer() } }
-                    />
-                )
-            })
-        }
+
 
     }, [])
 
@@ -30,8 +22,10 @@ export const StackSettings = ( { navigation } ) => {
         <Stack.Navigator
             screenOptions={{
                 headerStyle: {
-                    elevation: 0
+                    elevation: 0,
+                    
                 },
+                headerTitleAlign: 'center',
                 cardStyle: {
                     backgroundColor: 'white'
                 }

@@ -8,7 +8,7 @@ export const Pagina2Screen = ( { navigation } ) => {
     useEffect(() => {
         
         navigation.setOptions({
-            title: 'Hola mundo'
+            title: 'Página 2'
         });
 
     }, [])

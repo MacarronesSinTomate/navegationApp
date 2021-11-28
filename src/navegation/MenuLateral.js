@@ -6,6 +6,7 @@ import { styles } from '../theme/appTheme';
 import { StackNavigation } from './StackNavigation';
 import { StackSettings } from './StackSettings';
 import { BottomTabNavigation } from './BottomTabNavigation';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const Drawer = createDrawerNavigator();
 
@@ -20,7 +21,7 @@ export const MenuLateral = () => {
                 headerShown: false,
             }}
             drawerContent={ ( props ) => <MenuInterno { ...props } /> }
-            initialRouteName="TabNavigation"
+            initialRouteName="BottomTabNavigation"
         >
             <Drawer.Screen name="StackNavigation" component={ StackNavigation } />
             <Drawer.Screen name="StackSettings"  component={ StackSettings } />
@@ -66,6 +67,7 @@ const MenuInterno = ( { navigation } ) => {
                     style={ styles.menuBoton }
                     onPress={ () => navigation.navigate( "StackSettings" ) }
                 >
+                    <Icon style={{ marginRight: 10 }} name="cog-outline" size={25} color="black"/>
                     <Text style={ styles.menuText }> Settings </Text>
                 </TouchableOpacity>
 
@@ -74,6 +76,7 @@ const MenuInterno = ( { navigation } ) => {
                     style={ styles.menuBoton }
                     onPress={ () => navigation.navigate( "BottomTabNavigation" ) }
                 >
+                    <Icon style={{ marginRight: 10 }} name="albums-outline" size={25} color="black"/>
                     <Text style={ styles.menuText }> TabNavigation </Text>
                 </TouchableOpacity>
 

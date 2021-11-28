@@ -15,6 +15,7 @@ export const StackNavigation = () => {
                 headerStyle: {
                     elevation: 0
                 },
+                headerTitleAlign: 'center',
                 cardStyle: {
                     backgroundColor: 'white'
                 }
